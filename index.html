@@ -3,71 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aungkita Saha | Personal Resume</title>
+  <title>Aungkita Saha | Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
-      color: #333;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #222;
+      line-height: 1.6;
     }
     .container {
-      width: 90%;
       max-width: 900px;
-      margin: 2rem auto;
+      margin: auto;
       padding: 2rem;
-      background: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
     }
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid #eee;
     }
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.2rem;
-      text-transform: uppercase;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #111;
     }
     header p {
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: #555;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      color: #004085;
-      border-bottom: 2px solid #dee2e6;
-      padding-bottom: 0.25rem;
-    }
-    ul {
-      list-style-type: square;
-      margin: 0;
-      padding-left: 1.2rem;
+      margin-top: 0.5rem;
     }
     .contact-info {
+      margin-top: 1rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-    .contact-info a {
-      text-decoration: none;
-      color: #007bff;
+      gap: 1.2rem;
       font-size: 0.95rem;
     }
-    .education-item, .skill-section {
+    .contact-info a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    section {
+      margin-top: 2.5rem;
+    }
+    section h2 {
+      font-size: 1.6rem;
+      color: #111;
+      border-bottom: 2px solid #eee;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+    }
+    .education-item, .skill-section, .coursework-section {
       margin-bottom: 1.5rem;
     }
-    .education-item strong {
+    .education-item strong, .skill-section strong {
+      font-weight: 600;
       display: block;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.3rem;
+    }
+    .highlight {
+      color: #007acc;
     }
     @media (max-width: 600px) {
       header h1 {
@@ -114,37 +115,47 @@
       <h2>Education</h2>
       <div class="education-item">
         <strong>Higher Secondary Certificate (HSC) Examination – 2024</strong>
-        <p>Pabna Govt. Women's College, Pabna, Bangladesh</p>
+        <p class="highlight">Pabna Govt. Women's College, Pabna, Bangladesh</p>
         <p>Board: Rajshahi | GPA: 5.00/5.00 | Grade: A+<br>
         Avg. Marks in Higher Mathematics, Physics, and Chemistry: 93.83%</p>
       </div>
       <div class="education-item">
         <strong>Secondary School Certificate (SSC) Examination – 2022</strong>
-        <p>Dhobakhola Coronation High School, Natiabari, Pabna, Bangladesh</p>
+        <p class="highlight">Dhobakhola Coronation High School, Natiabari, Pabna, Bangladesh</p>
         <p>Board: Rajshahi | GPA: 5.00/5.00 | Grade: A+<br>
         Avg. Marks in Mathematics, Higher Mathematics, Physics, and Chemistry: 98.25%</p>
       </div>
     </section>
 
     <section>
-      <h2>List of Coursework</h2>
-      <p><strong>HSC:</strong> Higher Mathematics, Physics, Chemistry, Biology, Information and Communication Technology, English, Bengali</p>
-      <p><strong>SSC:</strong> Mathematics, Higher Mathematics, Physics, Chemistry, Biology, Information and Communication Technology, English, Bengali, Bangladesh and Global Studies, Hindu Religion and Moral Education, Career Education</p>
+      <h2>Coursework</h2>
+      <div class="coursework-section">
+        <strong>HSC:</strong>
+        <p>Higher Mathematics, Physics, Chemistry, Biology, Information and Communication Technology, English, Bengali</p>
+      </div>
+      <div class="coursework-section">
+        <strong>SSC:</strong>
+        <p>Mathematics, Higher Mathematics, Physics, Chemistry, Biology, Information and Communication Technology, English, Bengali, Bangladesh and Global Studies, Hindu Religion and Moral Education, Career Education</p>
+      </div>
     </section>
 
     <section>
       <h2>Skills Summary</h2>
       <div class="skill-section">
-        <strong>Programming Language:</strong> C programming
+        <strong>Programming Language:</strong>
+        <p>C programming</p>
       </div>
       <div class="skill-section">
-        <strong>Markup Language:</strong> HTML (HyperText Markup Language)
+        <strong>Markup Language:</strong>
+        <p>HTML (HyperText Markup Language)</p>
       </div>
       <div class="skill-section">
-        <strong>Core Concepts:</strong> Flowchart, Algorithm
+        <strong>Core Concepts:</strong>
+        <p>Flowchart, Algorithm</p>
       </div>
       <div class="skill-section">
-        <strong>Basic Skills:</strong> Self-motivated, Time Management, Critical Thinking, Teamwork, Adaptability, Leadership
+        <strong>Basic Skills:</strong>
+        <p>Self-motivated, Time Management, Critical Thinking, Teamwork, Adaptability, Leadership</p>
       </div>
     </section>
   </div>
