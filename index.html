@@ -1,102 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aungkita Saha</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        header {
-            background-color: #343a40;
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-        header p {
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-        }
-        main {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        section {
-            margin-bottom: 2rem;
-        }
-        h2 {
-            color: #007bff;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #e9ecef;
-            font-size: 0.9rem;
-            color: #555;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aungkita Saha | Personal Resume</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2rem;
+      text-transform: uppercase;
+    }
+    header p {
+      font-size: 1rem;
+      color: #555;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #004085;
+      border-bottom: 2px solid #dee2e6;
+      padding-bottom: 0.25rem;
+    }
+    ul {
+      list-style-type: square;
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .contact-info a {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 0.95rem;
+    }
+    .education-item, .skill-section {
+      margin-bottom: 1.5rem;
+    }
+    .education-item strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 1rem;
+      }
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h1>Aungkita Saha</h1>
+      <p>Aspiring Engineering Student | ICCR Scholarship Applicant</p>
+      <div class="contact-info">
+        <a href="tel:+8801777573388">📞 +88 (01777) 573388</a>
+        <a href="mailto:aungkitasaha2005@gmail.com">📧 aungkitasaha2005@gmail.com</a>
+        <a href="https://www.linkedin.com/in/aungkita" target="_blank">🔗 LinkedIn</a>
+        <a href="http://aungkita.github.io" target="_blank">🌐 Portfolio</a>
+      </div>
+    </header>
 
-<header>
-    <h1>AUNGKITA SAHA</h1>
-    <p>Aspiring Engineering Student | Passionate Learner | Scholarship Applicant</p>
-</header>
-
-<main>
     <section>
-        <h2>About Me</h2>
-        <p>
-            I am Aungkita Saha, a dedicated and ambitious student with a strong interest in science and engineering. 
-            I recently completed my Higher Secondary Certificate (HSC) from Pabna Govt. Women’s College, achieving excellent academic results. 
-            I am currently seeking opportunities to pursue undergraduate studies in engineering and am applying for the ICCR Scholarship.
-        </p>
+      <h2>Objective</h2>
+      <p>
+        As a truly motivated and high-achieving student with a strong foundation in science,
+        I am seeking an opportunity to pursue an undergraduate degree in engineering through
+        the prestigious Indian Council for Cultural Relations (ICCR) scholarship. With a consistent
+        record of academic excellence, particularly in mathematics, physics, and chemistry, I am eager
+        to apply my analytical thinking, curiosity, and problem-solving skills to contribute meaningfully
+        in the field of engineering. My goal is to pursue a globally competitive education that will equip
+        me to become a future-ready engineer, committed to driving innovation, advancing sustainable
+        solutions, and contributing meaningfully to societal progress.
+      </p>
     </section>
 
     <section>
-        <h2>Academic Achievements</h2>
-        <ul>
-            <li>HSC (Science) – GPA: 5.00</li>
-            <li>Mathematics: 98% (Highest in Class)</li>
-            <li>Physics and Chemistry: A+ Grades</li>
-        </ul>
+      <h2>Education</h2>
+      <div class="education-item">
+        <strong>Higher Secondary Certificate (HSC) Examination – 2024</strong>
+        <p>Pabna Govt. Women's College, Pabna, Bangladesh</p>
+        <p>Board: Rajshahi | GPA: 5.00/5.00 | Grade: A+<br>
+        Avg. Marks in Higher Mathematics, Physics, and Chemistry: 93.83%</p>
+      </div>
+      <div class="education-item">
+        <strong>Secondary School Certificate (SSC) Examination – 2022</strong>
+        <p>Dhobakhola Coronation High School, Natiabari, Pabna, Bangladesh</p>
+        <p>Board: Rajshahi | GPA: 5.00/5.00 | Grade: A+<br>
+        Avg. Marks in Mathematics, Higher Mathematics, Physics, and Chemistry: 98.25%</p>
+      </div>
     </section>
 
     <section>
-        <h2>Skills & Interests</h2>
-        <ul>
-            <li>Mathematical problem solving</li>
-            <li>Physics experiments and logic-based thinking</li>
-            <li>Learning coding and web technologies</li>
-            <li>Interest in robotics and electronics</li>
-        </ul>
+      <h2>List of Coursework</h2>
+      <p><strong>HSC:</strong> Higher Mathematics, Physics, Chemistry, Biology, Information and Communication Technology, English, Bengali</p>
+      <p><strong>SSC:</strong> Mathematics, Higher Mathematics, Physics, Chemistry, Biology, Information and Communication Technology, English, Bengali, Bangladesh and Global Studies, Hindu Religion and Moral Education, Career Education</p>
     </section>
 
     <section>
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:aungkita.saha@email.com">aungkita.saha@email.com</a></p>
-        <p>Phone: +8801XXXXXXXXX</p>
+      <h2>Skills Summary</h2>
+      <div class="skill-section">
+        <strong>Programming Language:</strong> C programming
+      </div>
+      <div class="skill-section">
+        <strong>Markup Language:</strong> HTML (HyperText Markup Language)
+      </div>
+      <div class="skill-section">
+        <strong>Core Concepts:</strong> Flowchart, Algorithm
+      </div>
+      <div class="skill-section">
+        <strong>Basic Skills:</strong> Self-motivated, Time Management, Critical Thinking, Teamwork, Adaptability, Leadership
+      </div>
     </section>
-</main>
-
-<footer>
-    &copy; 2025 Aungkita Saha. All rights reserved.
-</footer>
-
+  </div>
 </body>
 </html>
