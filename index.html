@@ -3,226 +3,331 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aungkita Saha | Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Aungkita Saha | Academic Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary-color: #1a365d;
+      --secondary-color: #2b6cb0;
+      --text-main: #2d3748;
+      --text-muted: #4a5568;
+      --bg-color: #f7fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #222;
+      background-color: var(--bg-color);
+      color: var(--text-main);
       line-height: 1.6;
     }
+
     .container {
-      max-width: 1280px;
-      margin: auto;
-      padding: 2rem;
+      max-width: 1100px;
+      margin: 2rem auto;
+      background-color: var(--card-bg);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      overflow: hidden;
     }
+
+    /* --- Header Section --- */
     header {
-      text-align: center;
-      padding-bottom: 2rem;
-      border-bottom: 2px solid #eee;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 3rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
     }
-    header h1 {
+
+    .profile-img-container {
+      flex-shrink: 0;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .header-info h1 {
       font-size: 2.8rem;
       font-weight: 700;
-      color: #111;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
     }
-    header p {
-      font-size: 1.1rem;
-      color: #555;
-      margin-top: 0.5rem;
+
+    .header-info h2 {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #e2e8f0;
+      margin-bottom: 1.2rem;
     }
-    .contact-info {
-      margin-top: 1rem;
+
+    .contact-links {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.2rem;
+      gap: 1.5rem;
       font-size: 0.95rem;
     }
-    .contact-info a {
-      color: #0066cc;
+
+    .contact-links a, .contact-links span {
+      color: white;
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s ease;
     }
+
+    .contact-links a:hover {
+      color: #90cdf4;
+    }
+
+    /* --- Main Content Layout --- */
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 2rem;
+      gap: 2rem;
+    }
+
     section {
-      margin-top: 2.5rem;
+      margin-bottom: 2rem;
     }
-    section h2 {
-      font-size: 1.6rem;
-      color: #111;
-      border-bottom: 2px solid #eee;
-      margin-bottom: 1rem;
+
+    section h3 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--border-color);
       padding-bottom: 0.5rem;
-    }
-    .education-item, .skill-section, .coursework-section {
       margin-bottom: 1.5rem;
-    }
-    .education-item strong, .skill-section strong {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       font-weight: 600;
-      display: block;
+    }
+
+    p {
+      color: var(--text-muted);
+      text-align: justify;
+      margin-bottom: 1rem;
+    }
+
+    /* --- Lists and Items --- */
+    .timeline-item {
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid var(--secondary-color);
+    }
+
+    .timeline-item h4 {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-item .inst-name {
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+
+    .timeline-item .meta-info {
+      font-size: 0.9rem;
+      color: #718096;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    ul.custom-list {
+      list-style-type: none;
+    }
+
+    ul.custom-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    ul.custom-list li::before {
+      content: "•";
+      color: var(--secondary-color);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-box {
+      background: #f8fafc;
+      padding: 1.2rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .skill-box h4 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .course-highlight h4 {
+      color: var(--text-main);
+      margin-top: 1.2rem;
       margin-bottom: 0.3rem;
     }
-    .highlight {
-      color: #007acc;
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .container {
-        padding: 1rem;
-      }
-      .contact-info {
+
+    /* --- Responsive Design --- */
+    @media (max-width: 768px) {
+      header {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+      .contact-links {
+        justify-content: center;
+      }
+      .timeline-item .meta-info {
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
+
   <div class="container">
     <header>
-      <h1>Aungkita Saha</h1>
-      <p>Aspiring Engineering Student | Loves Mathematics and Physics Mostly | From: Pabna, Bangladesh</p>
-      <div class="contact-info">
-        <!-- <a href="tel:+8801777573388">📞 +88 (01777) 573388</a> -->
-        <a href="mailto:aungkitasaha2005@gmail.com">📧 aungkitasaha2005@gmail.com</a>
-        <a href="https://www.linkedin.com/in/aungkita" target="_blank">🔗 LinkedIn</a>
-        <a href="http://aungkita.github.io" target="_blank">🌐 Webpage</a>
+      <div class="profile-img-container">
+        <img src="aungkita_saha.jpg" alt="Aungkita Saha" class="profile-img">
+      </div>
+      <div class="header-info">
+        <h1>Aungkita Saha</h1>
+        <h2>Bachelor of Science (Honors) in Physics | Aspiring Engineering Scholar</h2>
+        <div class="contact-links">
+          <span title="Phone"><i class="fas fa-phone-alt"></i> +88 (01777) 573388</span>
+          <a href="mailto:aungkitasaha2005@gmail.com"><i class="fas fa-envelope"></i> aungkitasaha2005@gmail.com</a>
+          <a href="https://linkedin.com/in/aungkita" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/aungkita</a>
+          <a href="https://aungkita.github.io" target="_blank"><i class="fas fa-globe"></i> aungkita.github.io</a>
+        </div>
       </div>
     </header>
 
-    <section>
-      <h2>Objective</h2>
-        <p style="text-align: justify; text-justify: inter-word;">
-        As a truly motivated and high-achieving student with a strong foundation in science, 
-          I am seeking an opportunity to pursue an undergraduate degree in engineering through 
-          full scholarship. With a consistent record of academic excellence, particularly in mathematics, physics, and chemistry, I am eager 
-          to apply my analytical thinking, curiosity, and problem-solving skills to contribute meaningfully 
-          in the field of engineering. My goal is to pursue a globally competitive education that will equip 
-          me to become a future-ready engineer, committed to driving innovation, advancing sustainable 
-          solutions, and contributing meaningfully to societal progress.
-      </p>
-
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <div class="education-item">
-        <strong>Higher Secondary Certificate (HSC) Examination – 2024</strong>
-        <p class="highlight">Pabna Govt. Women's College, Pabna, Bangladesh</p>
-        <p>Board: Rajshahi | GPA: 5.00/5.00 | Grade: A+<br>
-        Avg. Marks in Higher Mathematics, Physics, and Chemistry: 93.83%</p>
-      </div>
-      <div class="education-item">
-        <strong>Secondary School Certificate (SSC) Examination – 2022</strong>
-        <p class="highlight">Dhobakhola Coronation High School, Natiabari, Pabna, Bangladesh</p>
-        <p>Board: Rajshahi | GPA: 5.00/5.00 | Grade: A+<br>
-        Avg. Marks in Mathematics, Higher Mathematics, Physics, and Chemistry: 98.25%</p>
-      </div>
-    </section>
-
-
-
-    <section>
-      <h2>Skills Summary</h2>
-      <div class="skill-section">
-        <strong>Programming Language:</strong>
-        <p>C programming</p>
-      </div>
-      <div class="skill-section">
-        <strong>Markup Language:</strong>
-        <p>HTML (HyperText Markup Language)</p>
-      </div>
-      <div class="skill-section">
-        <strong>Core Concepts:</strong>
-        <p>Flowchart, Algorithm</p>
-      </div>
-      <div class="skill-section">
-        <strong>Basic Skills:</strong>
-        <p>Self-motivated, Time Management, Critical Thinking, Teamwork, Adaptability, Leadership</p>
-      </div>
-    </section>
-
-
-        <section>
-      <h2>Completed Coursework</h2>
-      <div class="coursework-section">
-        <strong>HSC:</strong>
-        <p>Higher Mathematics, Physics, Chemistry, Biology, Information and Communication Technology, English, Bengali</p>
-      </div>
-      <div class="coursework-section">
-        <strong>SSC:</strong>
-        <p style="text-align: justify; text-justify: inter-word;">Mathematics, Higher Mathematics, Physics, Chemistry, Biology, Information and Communication Technology, English, Bengali, Bangladesh and Global Studies, Hindu Religion and Moral Education, Career Education</p>
-      </div>
-    </section>
-
-    <section>
-
-      <h2>Highlighting Important Contents of Key Courses Studied</h2>
-      <div class="coursework-section">
-        <strong>Physics:</strong>
-       <p style="text-align: justify; text-justify: inter-word;">
-        The Physics 1st Paper covers: Vectors, linear motion, two-dimensional motion, laws of motion, laws of rotational motion, work, power and energy, gravitation, simple harmonic motion, elasticity, fluids, heat and gas, temperature, first law of thermodynamics, heat radiation, change of state, second law of thermodynamics, wave and sound, velocity of sound. The Physics 2nd Paper covers: electrostatics, the flow of electricity and electric circuits, the thermal and chemical effects of current, the magnetic effects of current, electromagnetic induction and alternating current, electromagnetic waves, reflection of light, refraction of light, optical instruments, wave theory of light, electron and photon, atom, electronics, theory of relativity and astrophysics
-        </p>
-      </div>
-      <div class="coursework-section">
-        <strong>Mathematics and Higher Mathematics:</strong>
-        <p style="text-align: justify; text-justify: inter-word;">
-          The mathematics course includes: set theory, functions and relations, quadratic equations, matrices and determinants, permutation and combination, binomial theorem, vector algebra, coordinate geometry, trigonometry, and basic calculus including differentiation and integration. Higher Mathematics extends these foundations with advanced topics such as mathematical logic, complex numbers, polynomial equations, inequalities, sequences and series, advanced integral and differential calculus, differential equations, and applications of calculus in geometry and mechanics. The curriculum emphasizes theoretical understanding along with practical problem-solving, preparing students for science, engineering, and technical fields.
-        </p>
-      </div>
-
-      <div class="coursework-section">
-        <strong>Chemistry:</strong>
-       <p style="text-align: justify; text-justify: inter-word;">
-         The Chemistry 1st Paper syllabus includes a comprehensive foundation in fundamental concepts of inorganic and physical chemistry: atomic structure and the periodic table, covering periodic properties and chemical bonding. It continues through the states of matter, gas laws, and the principles of solutions and colloids. The syllabus further covered chemical reactions and stoichiometry, thermodynamics, chemical equilibrium, and the behavior of acids, bases, and salts. Advanced chapters include electrochemistry and redox reactions, principles of oxidation and reduction, properties of hydrogen, water, and hydrogen peroxide, the periodic classification of elements, and detailed studies on the s- and p-block elements, including their characteristics and compounds. The Chemistry 2nd Paper includes key areas of advanced inorganic and physical chemistry. It begins with environmental chemistry, highlighting pollution and its impact, and proceeds to the periodic classification of elements, discussing the properties and trends of s-, p-, d-, and f-block elements. The syllabus explores chemical bonding, reaction kinetics, and dynamic chemical equilibrium, including acid-base and solubility equilibria. It also explored thermochemistry, examining heat changes in chemical processes, and electrochemistry, covering redox reactions, electrochemical cells, and electrolysis. The curriculum concludes with nuclear chemistry, discussing radioactivity and nuclear reactions.  </p>
-      </div>
+    <div class="content-wrapper">
       
-      
-      <div class="coursework-section">
-        <strong>Information and Communication Technology:</strong>
-       <p style="text-align: justify; text-justify: inter-word;">
-          Topics include: World and Bangladesh Perspective, Communication Systems and Networking, Number Systems and Digital Devices, Introduction to Web Design and HTML, C Programming Language, and Database Management System.
+      <section>
+        <h3>Objectives</h3>
+        <p>
+          As a truly motivated and high-achieving student with a strong foundation in science, I am seeking an opportunity to pursue an undergraduate degree in engineering through the prestigious Indian Council for Cultural Relations (ICCR) scholarship. With a consistent record of academic excellence, particularly in mathematics, physics, and chemistry, I am eager to apply my analytical thinking, curiosity, and problem-solving skills to contribute meaningfully in the field of engineering. My goal is to pursue a globally competitive education that will equip me to become a future-ready engineer, committed to driving innovation, advancing sustainable solutions, and contributing meaningfully to societal progress.
         </p>
-      </div>
-      <div class="coursework-section">
-        <strong>English:</strong>
-      <p style="text-align: justify; text-justify: inter-word;">
-        The English 1st Paper covers multiple-choice questions, short-answer questions, information transfer or flow charts, summary writing, cloze tests with clues, cloze tests without clues, rearranging, graph or chart writing, story writing, and informal letters. The English 2nd Paper focuses on grammar and writing skills, including the use of prepositions, special phrases or words, completing sentences using clauses and phrases, the right form of verbs, narrative style, use of modifiers, sentence connectors, synonyms and antonyms, punctuation, formal letters or email writing, essay writing, and two types of paragraph writing — one by listing or description and the other by comparison and contrast or cause and effect.
-        </p>
-      </div>
+      </section>
 
-    </section>
+      <section>
+        <h3>Education</h3>
+        
+        <div class="timeline-item">
+          <h4>Bachelor of Science (Honors) in Physics</h4>
+          <div class="meta-info">
+            <span class="inst-name">Jahangirnagar University, Savar, Dhaka, Bangladesh</span>
+            <span>March 2026 - Present</span>
+          </div>
+          <p style="margin-bottom: 0;">Web: <a href="http://juniv.edu/department/phy/program/bscPhysics" target="_blank" style="color: var(--secondary-color);">juniv.edu/department/phy/program/bscPhysics</a></p>
+        </div>
 
-    <section>
-      <h2>Academic Honors and Awards</h2>
-      <div class="coursework-section">
-        <ul style="padding-left: 1.2rem;">
-          <li><strong>Best Grades:</strong> Received highest academic grades in SSC and HSC final examinations (2022 and 2024).</li>
+        <div class="timeline-item">
+          <h4>Higher Secondary Certificate (HSC) Examination – Major: Science</h4>
+          <div class="meta-info">
+            <span class="inst-name">Pabna Govt. Women's College, Pabna, Bangladesh</span>
+            <span>Jan 2023 - Oct 2024</span>
+          </div>
+          <p style="margin-bottom: 0;"><strong>Board:</strong> Rajshahi | <strong>GPA:</strong> 5.00/5.00 | <strong>Grade:</strong> A+ <br>
+          <em>Avg. Marks in Higher Mathematics, Physics, and Chemistry: 93.83%</em></p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Secondary School Certificate (SSC) Examination – Major: Science</h4>
+          <div class="meta-info">
+            <span class="inst-name">Dhobakhola Coronation High School, Natiabari, Pabna, Bangladesh</span>
+            <span>Jan 2017 - Nov 2022</span>
+          </div>
+          <p style="margin-bottom: 0;"><strong>Board:</strong> Rajshahi | <strong>GPA:</strong> 5.00/5.00 | <strong>Grade:</strong> A+ <br>
+          <em>Avg. Marks in Mathematics, Higher Mathematics, Physics, and Chemistry: 98.25%</em></p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Academic Honors and Awards</h3>
+        <ul class="custom-list">
+          <li><strong>Performance in Competitive Exam:</strong> Ranked 109th in the 4th shift of the highly competitive admission test for studying Bachelor of Science at the Faculty of Mathematical and Physical Sciences of Jahangirnagar University, one of the top public universities in Bangladesh.</li>
+          <li><strong>Best Grades:</strong> Received highest academic grades in S.S.C. and H.S.C. level final exams (2022 and 2024).</li>
           <li><strong>Scholarship:</strong> General Grade Scholarship in Primary School Certificate (PSC) Exam in Bangladesh (2016).</li>
         </ul>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h2>Voluntary and Extracurricular Activities</h2>
-      <div class="coursework-section">
-        <ul style="padding-left: 1.2rem;">
-          <li><strong>Community Services:</strong> Participated in local clean-up drives, charity collections, tree planting, blood donation, and support to community organizations.</li>
-          <li><strong>Student Organization:</strong> Engaged in organizing school events and contributing to campus life and student activities.</li>
+      <section>
+        <h3>Skills Summary</h3>
+        <div class="skill-grid">
+          <div class="skill-box">
+            <h4><i class="fas fa-code"></i> Programming & Markup</h4>
+            <p style="margin:0;">C Programming, HTML (HyperText Markup Language)</p>
+          </div>
+          <div class="skill-box">
+            <h4><i class="fas fa-project-diagram"></i> Core Concepts</h4>
+            <p style="margin:0;">Flowcharts and Algorithms</p>
+          </div>
+          <div class="skill-box">
+            <h4><i class="fas fa-user-tie"></i> Soft Skills</h4>
+            <p style="margin:0;">Self-motivated, Time Management, Critical Thinking, Teamwork, Adaptability, Leadership</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Highlighting Key Courses Studied</h3>
+        <div class="course-highlight">
+          <h4>Physics</h4>
+          <p>The Physics 1st Paper covers: Vectors, linear motion, two-dimensional motion, laws of motion, laws of rotational motion, work, power and energy, gravitation, simple harmonic motion, elasticity, fluids, heat and gas, temperature, first law of thermodynamics, heat radiation, change of state, second law of thermodynamics, wave and sound, velocity of sound. The Physics 2nd Paper covers: electrostatics, the flow of electricity and electric circuits, the thermal and chemical effects of current, the magnetic effects of current, electromagnetic induction and alternating current, electromagnetic waves, reflection of light, refraction of light, optical instruments, wave theory of light, electron and photon, atom, electronics, theory of relativity and astrophysics.</p>
+          
+          <h4>Mathematics and Higher Mathematics</h4>
+          <p>The mathematics course includes: set theory, functions and relations, quadratic equations, matrices and determinants, permutation and combination, binomial theorem, vector algebra, coordinate geometry, trigonometry, and basic calculus. Higher Mathematics extends these foundations with advanced topics such as mathematical logic, complex numbers, polynomial equations, inequalities, sequences and series, advanced calculus of integrals and derivatives, differential equations, and applications of calculus to geometry and mechanics.</p>
+          
+          <h4>Chemistry</h4>
+          <p>The Chemistry 1st Paper syllabus includes a comprehensive foundation in fundamental concepts of inorganic and physical chemistry: atomic structure, the periodic table, states of matter, thermodynamics, chemical equilibrium, and electrochemistry. The Chemistry 2nd paper includes environmental chemistry, exploring chemical bonding, reaction kinetics, thermochemistry, and concludes with nuclear chemistry.</p>
+          
+          <h4>Information and Communication Technology</h4>
+          <p>World and Bangladesh Perspective, Communication Systems and Networking, Number Systems and Digital Devices, Introduction to Web Design and HTML, C Programming Language, and Database Management System.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Voluntary & Extracurricular Activities</h3>
+        <ul class="custom-list">
+          <li><strong>Community Services:</strong> Engaged in volunteering activities to help the community, such as organizing clean-ups, collecting donations to charities, road-side tree planting, blood donation, and assisting local organizations.</li>
+          <li><strong>Student Organization:</strong> Participated in school events, organized activities, and contributed to the school's community.</li>
         </ul>
-      </div>
-    </section>
+      </section>
 
-    
-
-    
+    </div>
   </div>
+
 </body>
 </html>
