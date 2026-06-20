@@ -569,7 +569,14 @@ strong { font-weight: 600; color: var(--ink); }
 .a-card p { font-size: .95rem; margin: 0; }
 
 /* ---------- Coursework ---------- */
-.course-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.course-grid {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;
+}
+.course-grid > .c-card {
+  flex: 1 1 calc((100% - 60px) / 4); /* default: 4 cards per row */
+  min-width: 220px;
+  max-width: calc((100% - 40px) / 3); /* on 3-per-row rows (e.g. last 2), allow wider */
+}
 .c-card {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 22px 20px; box-shadow: var(--shadow-sm);
@@ -695,10 +702,10 @@ strong { font-weight: 600; color: var(--ink); }
   .nav-toggle.open span:nth-child(2) { opacity: 0; }
   .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .section { padding: 80px 0; }
-  .course-grid { grid-template-columns: repeat(2, 1fr); }
+  .course-grid > .c-card { flex: 1 1 calc((100% - 20px) / 2); max-width: none; }
 }
 @media (max-width: 560px) {
-  .course-grid { grid-template-columns: 1fr; }
+  .course-grid > .c-card { flex: 1 1 100%; max-width: 100%; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .btn { justify-content: center; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
