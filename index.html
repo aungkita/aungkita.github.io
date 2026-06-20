@@ -1,350 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aungkita Saha | Academic Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --primary-color: #1a365d;
-      --secondary-color: #2b6cb0;
-      --text-main: #2d3748;
-      --text-muted: #4a5568;
-      --bg-color: #f7fafc;
-      --card-bg: #ffffff;
-      --border-color: #e2e8f0;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aungkita Saha — Undergraduate Physics student at Jahangirnagar University. Portfolio, research interests, education and contact." />
+  <meta name="author" content="Aungkita Saha" />
+  <title>Aungkita Saha · Physics Portfolio</title>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <!-- Google Fonts: Display (serif) + Body (sans) + Accent (serif italic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
+  <!-- Phosphor Icons for subtle academic-feel icons -->
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css"/>
 
-    .container {
-      max-width: 1100px;
-      margin: 2rem auto;
-      background-color: var(--card-bg);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    /* --- Header Section --- */
-    header {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 3rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-    }
-
-    .profile-img-container {
-      flex-shrink: 0;
-    }
-
-    .profile-img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid white;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    }
-
-    .header-info h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 0.5rem;
-    }
-
-    .header-info h2 {
-      font-size: 1.2rem;
-      font-weight: 300;
-      color: #e2e8f0;
-      margin-bottom: 1.2rem;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.95rem;
-    }
-
-    .contact-links a, .contact-links span {
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: color 0.2s ease;
-    }
-
-    .contact-links a:hover {
-      color: #90cdf4;
-    }
-
-    /* --- Main Content Layout --- */
-    .content-wrapper {
-      display: grid;
-      grid-template-columns: 1fr;
-      padding: 2rem;
-      gap: 2rem;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    section h3 {
-      font-size: 1.5rem;
-      color: var(--primary-color);
-      border-bottom: 2px solid var(--border-color);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-weight: 600;
-    }
-
-    p {
-      color: var(--text-muted);
-      text-align: justify;
-      margin-bottom: 1rem;
-    }
-
-    /* --- Lists and Items --- */
-    .timeline-item {
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-left: 1.5rem;
-      border-left: 3px solid var(--secondary-color);
-    }
-
-    .timeline-item h4 {
-      font-size: 1.1rem;
-      color: var(--text-main);
-      margin-bottom: 0.2rem;
-    }
-
-    .timeline-item .inst-name {
-      font-weight: 600;
-      color: var(--secondary-color);
-    }
-
-    .timeline-item .meta-info {
-      font-size: 0.9rem;
-      color: #718096;
-      margin-bottom: 0.5rem;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    ul.custom-list {
-      list-style-type: none;
-    }
-
-    ul.custom-list li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    ul.custom-list li::before {
-      content: "•";
-      color: var(--secondary-color);
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-      font-size: 1.2rem;
-    }
-
-    .skill-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .skill-box {
-      background: #f8fafc;
-      padding: 1.2rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-    }
-
-    .skill-box h4 {
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-    }
-
-    .course-highlight h4 {
-      color: var(--text-main);
-      margin-top: 1.2rem;
-      margin-bottom: 0.3rem;
-    }
-
-    /* --- Responsive Design --- */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem 1rem;
-      }
-      .contact-links {
-        justify-content: center;
-      }
-      .timeline-item .meta-info {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <div class="profile-img-container">
-        <img src="aungkita_saha.jpg" alt="Aungkita Saha" class="profile-img">
-      </div>
-      <div class="header-info">
-        <h1>Aungkita Saha</h1>
-        <h2> Student of Bachelor of Science (Honors) in Physics, Jahanagirnagar University</h2>
-        <div class="contact-links">
-          <!-- <span title="Phone"><i class="fas fa-phone-alt"></i> +88 (01777) 57XXXX</span> -->
-          <a href="mailto:aungkitasaha2005@gmail.com"><i class="fas fa-envelope"></i> aungkitasaha2005@gmail.com</a>
-          <a href="https://linkedin.com/in/aungkita" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/aungkita</a>
-          <a href="https://aungkita.github.io" target="_blank"><i class="fas fa-globe"></i> aungkita.github.io</a>
-          <a href="resume.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Resume </a>
-        </div>
-      </div>
-    </header>
-
-    <div class="content-wrapper">
-      
-      <section>
-        <h3>Objectives</h3>
-        <p>
-
-          Currently, I am a student in the Department of Physics at Jahangirnagar University, pursuing a Bachelor of Science (Honours) in Physics since March 2026. Through my academic journey, I have developed a strong foundation in mathematics, physics, and analytical problem-solving, along with a deep curiosity about understanding and applying scientific principles. My consistent dedication to academic excellence has shaped my ambition to further expand my knowledge beyond theoretical physics into practical and innovative domains.
-
-          </p>
-        <p>
-Building on this background, I am also seeking the opportunity to pursue an undergraduate degree in engineering through the prestigious Indian Council for Cultural Relations (ICCR) scholarship in India. I aspire to integrate my physics-based knowledge with engineering applications to address real-world challenges effectively. My goal is to gain a globally competitive education that will prepare me to become a forward-thinking engineer, committed to innovation, sustainable solutions, and meaningful contributions to society.
-          
-        </p>
-      </section>
-
-      <section>
-        <h3>Education</h3>
-        
-        <div class="timeline-item">
-          <h4>Bachelor of Science (Honors) in Physics</h4>
-          <div class="meta-info">
-            <span class="inst-name">Jahangirnagar University, Savar, Dhaka, Bangladesh</span>
-            <span>March 2026 - Present</span>
-          </div>
-          <p style="margin-bottom: 0;">Web: <a href="http://juniv.edu/department/phy/program/bscPhysics" target="_blank" style="color: var(--secondary-color);">juniv.edu/department/phy/program/bscPhysics</a></p>
-        </div>
-
-        <div class="timeline-item">
-          <h4>Higher Secondary Certificate (HSC) Examination – Major: Science</h4>
-          <div class="meta-info">
-            <span class="inst-name">Pabna Govt. Women's College, Pabna, Bangladesh</span>
-            <span>Jan 2023 - Oct 2024</span>
-          </div>
-          <p style="margin-bottom: 0;"><strong>Board:</strong> Rajshahi | <strong>GPA:</strong> 5.00/5.00 | <strong>Grade:</strong> A+ <br>
-          <em>Avg. Marks in Higher Mathematics, Physics, and Chemistry: 93.83%</em></p>
-        </div>
-
-        <div class="timeline-item">
-          <h4>Secondary School Certificate (SSC) Examination – Major: Science</h4>
-          <div class="meta-info">
-            <span class="inst-name">Dhobakhola Coronation High School, Natiabari, Pabna, Bangladesh</span>
-            <span>Jan 2017 - Nov 2022</span>
-          </div>
-          <p style="margin-bottom: 0;"><strong>Board:</strong> Rajshahi | <strong>GPA:</strong> 5.00/5.00 | <strong>Grade:</strong> A+ <br>
-          <em>Avg. Marks in Mathematics, Higher Mathematics, Physics, and Chemistry: 98.25%</em></p>
-        </div>
-      </section>
-
-      <section>
-        <h3>Academic Honors and Awards</h3>
-        <ul class="custom-list">
-          <li><strong>Performance in Competitive Exam:</strong> Ranked 109th in the 4th shift of the highly competitive admission test for studying Bachelor of Science at the Faculty of Mathematical and Physical Sciences of Jahangirnagar University, one of the top public universities in Bangladesh.</li>
-          <li><strong>Best Grades:</strong> Received highest academic grades in S.S.C. and H.S.C. level final exams (2022 and 2024).</li>
-          <li><strong>Scholarship:</strong> General Grade Scholarship in Primary School Certificate (PSC) Exam in Bangladesh (2016).</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Skills Summary</h3>
-        <div class="skill-grid">
-          <div class="skill-box">
-            <h4><i class="fas fa-code"></i> Programming & Markup</h4>
-            <ul class="skill-list">
-              <li>C Programming</li>
-              <li>HTML (HyperText Markup Language)</li>
-            </ul>
-          </div>
-          <div class="skill-box">
-            <h4><i class="fas fa-project-diagram"></i> Core Concepts</h4>
-            <ul class="skill-list">
-              <li>Flowcharts</li>
-              <li>Algorithms</li>
-            </ul>            
-          </div>
-          <div class="skill-box">
-            <h4><i class="fas fa-user-tie"></i> Soft Skills</h4>
-            <ul class="skill-list">
-              <li>Self-motivated</li>
-              <li>Critical Thinking</li>
-            </ul>
-            
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3>Highlighting Key Courses Studied</h3>
-        <div class="course-highlight">
-          <h4>Physics</h4>
-          <p>The Physics 1st Paper covers: Vectors, linear motion, two-dimensional motion, laws of motion, laws of rotational motion, work, power and energy, gravitation, simple harmonic motion, elasticity, fluids, heat and gas, temperature, first law of thermodynamics, heat radiation, change of state, second law of thermodynamics, wave and sound, velocity of sound. The Physics 2nd Paper covers: electrostatics, the flow of electricity and electric circuits, the thermal and chemical effects of current, the magnetic effects of current, electromagnetic induction and alternating current, electromagnetic waves, reflection of light, refraction of light, optical instruments, wave theory of light, electron and photon, atom, electronics, theory of relativity and astrophysics.</p>
-          
-          <h4>Mathematics and Higher Mathematics</h4>
-          <p>The mathematics course includes: set theory, functions and relations, quadratic equations, matrices and determinants, permutation and combination, binomial theorem, vector algebra, coordinate geometry, trigonometry, and basic calculus. Higher Mathematics extends these foundations with advanced topics such as mathematical logic, complex numbers, polynomial equations, inequalities, sequences and series, advanced calculus of integrals and derivatives, differential equations, and applications of calculus to geometry and mechanics.</p>
-          
-          <h4>Chemistry</h4>
-          <p>The Chemistry 1st Paper syllabus includes a comprehensive foundation in fundamental concepts of inorganic and physical chemistry: atomic structure, the periodic table, states of matter, thermodynamics, chemical equilibrium, and electrochemistry. The Chemistry 2nd paper includes environmental chemistry, exploring chemical bonding, reaction kinetics, thermochemistry, and concludes with nuclear chemistry.</p>
-          
-          <h4>Information and Communication Technology</h4>
-          <p>World and Bangladesh Perspective, Communication Systems and Networking, Number Systems and Digital Devices, Introduction to Web Design and HTML, C Programming Language, and Database Management System.</p>
-        </div>
-      </section>
-
-      <section>
-        <h3>Voluntary & Extracurricular Activities</h3>
-        <ul class="custom-list">
-          <li><strong>Community Services:</strong> Engaged in volunteering activities to help the community, such as organizing clean-ups, collecting donations to charities, road-side tree planting, blood donation, and assisting local organizations.</li>
-          <li><strong>Student Organization:</strong> Participated in school events, organized activities, and contributed to the school's community.</li>
-        </ul>
-      </section>
-
-    </div>
+  <!-- Animated background blobs -->
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
   </div>
 
+  <!-- ============== NAV ============== -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">A</span>
+        <span class="brand-name">Aungkita<span class="dot">.</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#awards">Awards</a>
+        <a href="#coursework">Coursework</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Theme toggle -->
+      <div class="theme-toggle" role="group" aria-label="Theme">
+        <button class="theme-btn is-active" data-theme-choice="auto" aria-label="Auto theme (based on Dhaka time)" title="Auto · follows Dhaka time">
+          <i class="ph ph-circle-half"></i>
+          <span class="theme-label">Auto</span>
+        </button>
+        <button class="theme-btn" data-theme-choice="light" aria-label="Light theme" title="Light">
+          <i class="ph ph-sun"></i>
+          <span class="theme-label">Light</span>
+        </button>
+        <button class="theme-btn" data-theme-choice="dark" aria-label="Dark theme" title="Dark">
+          <i class="ph ph-moon"></i>
+          <span class="theme-label">Dark</span>
+        </button>
+      </div>
+
+      <!-- Dhaka time -->
+      <div class="dhaka-clock" title="Current time in Dhaka, Bangladesh">
+        <i class="ph ph-clock"></i>
+        <span id="dhakaTime" class="dhaka-time">--:--:--</span>
+        <span class="dhaka-tz">Dhaka</span>
+      </div>
+
+      <a href="#contact" class="nav-cta">
+        <i class="ph ph-paper-plane-tilt"></i> Get in touch
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============== HERO ============== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="eyebrow reveal">
+            <span class="eyebrow-dot"></span>
+            <span>Undergraduate Researcher · Physicist in training</span>
+          </div>
+          <h1 class="reveal">
+            Hello, I'm <span class="grad-text">Aungkita</span>.<br/>
+            <span class="serif-italic">Exploring the fabric of the universe.</span>
+          </h1>
+          <p class="hero-sub reveal">
+            B.Sc. (Honors) student in Physics at <strong>Jahangirnagar University</strong>, with a deep curiosity for the principles that shape reality — from the elegance of classical mechanics to the strange beauty of relativity and astrophysics.
+          </p>
+
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary" href="#about">
+              Read my story <i class="ph ph-arrow-down"></i>
+            </a>
+            <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">
+              <i class="ph ph-file-pdf"></i> View Resume
+            </a>
+          </div>
+
+          <ul class="hero-stats reveal" aria-label="At a glance">
+            <li>
+              <span class="stat-num">5.00</span>
+              <span class="stat-label">HSC GPA</span>
+            </li>
+            <li>
+              <span class="stat-num">5.00</span>
+              <span class="stat-label">SSC GPA</span>
+            </li>
+            <li>
+              <span class="stat-num">109ᵗʰ</span>
+              <span class="stat-label">JU Admission Rank</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-portrait reveal">
+          <div class="portrait-ring">
+            <div class="portrait-img">
+              <img src="aungkita_saha.jpg" alt="Portrait of Aungkita Saha" />
+            </div>
+          </div>
+          <div class="ju-badge floating-chip chip-3" aria-label="Jahangirnagar University">
+            <img src="Jahangirnagar_University_Logo.svg" alt="" />
+            <span>JU</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll to about section">
+        <span class="mouse"><span class="wheel"></span></span>
+        <span class="hint-text">scroll</span>
+      </a>
+    </section>
+
+    <!-- ============== ABOUT ============== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">01 — About</span>
+          <h2>A physicist with a builder's curiosity.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I am currently a student of <strong>Bachelor of Science (Honors) in Physics</strong> at <strong>Jahangirnagar University</strong>, Dhaka, Bangladesh. My academic journey has given me a strong foundation in mathematics, physics, and analytical problem-solving.
+            </p>
+            <p>
+              I am seeking an undergraduate engineering degree in India through the <em>ICCR scholarship</em>, with the goal of integrating fundamental physics with engineering applications — building sustainable, elegant solutions to real problems.
+            </p>
+            <p>
+              Beyond the lecture hall, I enjoy community service — clean-up drives, charity work, tree planting, and blood donation. I believe a good scientist is, first, a good citizen.
+            </p>
+
+            <div class="about-meta">
+              <div><i class="ph ph-map-pin"></i> Dhaka, Bangladesh</div>
+              <div><i class="ph ph-graduation-cap"></i> JU · Physics</div>
+              <div><i class="ph ph-envelope-simple"></i> Open to opportunities</div>
+            </div>
+          </div>
+
+          <aside class="about-side reveal">
+            <div class="info-card">
+              <h3>At a Glance</h3>
+              <ul>
+                <li><span>Field</span><strong>Physics</strong></li>
+                <li><span>Stage</span><strong>Undergraduate</strong></li>
+                <li><span>University</span><strong>Jahangirnagar University</strong></li>
+                <li><span>Started</span><strong>March 2026</strong></li>
+                <li><span>Languages</span><strong>Bangla, English</strong></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== EDUCATION ============== -->
+    <section id="education" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">02 — Education</span>
+          <h2>Academic path.</h2>
+          <p class="section-sub">A consistent record of excellence across institutions.</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="t-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-card">
+              <div class="t-head">
+                <span class="t-date">March 2026 — Present</span>
+                <span class="t-tag">Current</span>
+              </div>
+              <h3>B.Sc. (Honors) in Physics</h3>
+              <p class="t-place"><i class="ph ph-buildings"></i> Jahangirnagar University · Faculty of Mathematical and Physical Sciences · Savar, Dhaka, Bangladesh</p>
+              <p class="t-note">Ranked <strong>109ᵗʰ</strong> in the 4th shift of the B.Sc. admission test. Coursework spans classical mechanics, electromagnetism, optics, thermodynamics, waves, relativity and astrophysics.</p>
+            </div>
+          </li>
+
+          <li class="t-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-card">
+              <div class="t-head">
+                <span class="t-date">Jan 2023 — Oct 2024</span>
+                <span class="t-tag">Higher Secondary</span>
+              </div>
+              <h3>HSC · Major in Science</h3>
+              <p class="t-place"><i class="ph ph-buildings"></i> Pabna Govt. Women's College · Pabna, Bangladesh</p>
+              <p class="t-note"><strong>GPA 5.00 / 5.00 (Grade A+)</strong> · Board of Rajshahi. Average <strong>93.83%</strong> in Higher Math, Physics and Chemistry.</p>
+            </div>
+          </li>
+
+          <li class="t-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-card">
+              <div class="t-head">
+                <span class="t-date">Jan 2017 — Nov 2022</span>
+                <span class="t-tag">Secondary</span>
+              </div>
+              <h3>SSC · Major in Science</h3>
+              <p class="t-place"><i class="ph ph-buildings"></i> Dhobakhola Coronation High School · Natiabari, Pabna, Bangladesh</p>
+              <p class="t-note"><strong>GPA 5.00 / 5.00 (Grade A+)</strong> · Board of Rajshahi. Average <strong>98.25%</strong> in Math, Higher Math, Physics and Chemistry.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============== RESEARCH / INTERESTS ============== -->
+    <section id="research" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">03 — Research & Interests</span>
+          <h2>Where my curiosity is heading.</h2>
+          <p class="section-sub">The questions that keep me reading late into the night.</p>
+        </div>
+
+        <div class="interest-grid">
+          <article class="i-card reveal">
+            <div class="i-icon"><i class="ph-fill ph-atom"></i></div>
+            <h3>Foundational Physics</h3>
+            <p>From classical mechanics to quantum weirdness — understanding the rules by which the universe plays.</p>
+          </article>
+          <article class="i-card reveal">
+            <div class="i-icon"><i class="ph-fill ph-planet"></i></div>
+            <h3>Astrophysics</h3>
+            <p>Stellar dynamics, cosmology, and the strange objects that light up our night sky.</p>
+          </article>
+          <article class="i-card reveal">
+            <div class="i-icon"><i class="ph-fill ph-cpu"></i></div>
+            <h3>Engineering Applications</h3>
+            <p>Bridging physical insight with engineering — building sustainable, thoughtful solutions.</p>
+          </article>
+          <article class="i-card reveal">
+            <div class="i-icon"><i class="ph-fill ph-function"></i></div>
+            <h3>Mathematical Modelling</h3>
+            <p>Translating real-world phenomena into the language of equations and computation.</p>
+          </article>
+          <article class="i-card reveal">
+            <div class="i-icon"><i class="ph-fill ph-leaf"></i></div>
+            <h3>Sustainable Innovation</h3>
+            <p>Using science to design a more sustainable, more equitable future.</p>
+          </article>
+          <article class="i-card reveal">
+            <div class="i-icon"><i class="ph-fill ph-book-open-text"></i></div>
+            <h3>Science Education</h3>
+            <p>Making physics accessible, beautiful and inspiring for the next generation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== SKILLS ============== -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">04 — Skills</span>
+          <h2>Tools & ways of thinking.</h2>
+        </div>
+
+        <div class="skill-cols">
+          <div class="skill-col reveal">
+            <h3><i class="ph ph-code"></i> Programming & Markup</h3>
+            <ul class="chip-list">
+              <li>C Programming</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="skill-col reveal">
+            <h3><i class="ph ph-brain"></i> Core Concepts</h3>
+            <ul class="chip-list">
+              <li>Flowcharts</li>
+              <li>Algorithms</li>
+              <li>Analytical Reasoning</li>
+              <li>Problem Solving</li>
+            </ul>
+          </div>
+          <div class="skill-col reveal">
+            <h3><i class="ph ph-heart"></i> Soft Skills</h3>
+            <ul class="chip-list">
+              <li>Self-motivated</li>
+              <li>Critical Thinking</li>
+              <li>Team Collaboration</li>
+              <li>Communication</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== AWARDS ============== -->
+    <section id="awards" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">05 — Awards & Honors</span>
+          <h2>Milestones I'm proud of.</h2>
+        </div>
+
+        <div class="award-grid">
+          <div class="a-card reveal a-card-featured">
+            <div class="a-icon"><i class="ph-fill ph-lightning"></i></div>
+            <h3>GST Admission Test 2026 — Cleared</h3>
+            <p>Successfully cracked the <strong>GST Admission Test 2026</strong> and secured a seat in the top subject and department — <strong>Electrical &amp; Electronic Engineering (EEE)</strong> — at <strong>Jamalpur Science &amp; Technology University</strong>.</p>
+          </div>
+          <div class="a-card reveal">
+            <div class="a-icon"><i class="ph-fill ph-medal"></i></div>
+            <h3>Top Rank in Admission Test</h3>
+            <p>Ranked <strong>109ᵗʰ</strong> in the 4th shift of the B.Sc. admission test, Faculty of Mathematical and Physical Sciences, Jahangirnagar University.</p>
+          </div>
+          <div class="a-card reveal">
+            <div class="a-icon"><i class="ph-fill ph-trophy"></i></div>
+            <h3>Best Grades · SSC & HSC</h3>
+            <p>Highest academic grades in both S.S.C. (2022) and H.S.C. (2024) final examinations under the Rajshahi Board.</p>
+          </div>
+          <div class="a-card reveal">
+            <div class="a-icon"><i class="ph-fill ph-graduation-cap"></i></div>
+            <h3>PSC General Grade Scholarship</h3>
+            <p>Awarded the General Grade Scholarship in the Primary School Certificate (PSC) Examination, Bangladesh, 2016.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== COURSEWORK ============== -->
+    <section id="coursework" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">06 — Coursework</span>
+          <h2>Topics I've studied.</h2>
+        </div>
+
+        <div class="course-grid">
+          <div class="c-card reveal">
+            <h3><i class="ph ph-atom"></i> Physics</h3>
+            <ul>
+              <li>Vectors & Motion</li>
+              <li>Laws of Motion & Gravitation</li>
+              <li>Thermodynamics & Waves</li>
+              <li>Optics & Electromagnetism</li>
+              <li>Modern Physics</li>
+              <li>Relativity & Astrophysics</li>
+            </ul>
+          </div>
+          <div class="c-card reveal">
+            <h3><i class="ph ph-function"></i> Mathematics</h3>
+            <ul>
+              <li>Set Theory & Functions</li>
+              <li>Matrices & Determinants</li>
+              <li>Trigonometry</li>
+              <li>Coordinate Geometry</li>
+              <li>Calculus & Limits</li>
+              <li>Statistics & Probability</li>
+            </ul>
+          </div>
+          <div class="c-card reveal">
+            <h3><i class="ph ph-infinity"></i> Higher Mathematics</h3>
+            <ul>
+              <li>Complex Numbers</li>
+              <li>Differential Equations</li>
+              <li>Advanced Calculus</li>
+              <li>Linear Algebra</li>
+              <li>Vector Analysis</li>
+              <li>Numerical Methods</li>
+            </ul>
+          </div>
+          <div class="c-card reveal">
+            <h3><i class="ph ph-flask"></i> Chemistry & ICT</h3>
+            <ul>
+              <li>Atomic Structure</li>
+              <li>Periodic Table</li>
+              <li>Chemical Equilibrium</li>
+              <li>Nuclear Chemistry</li>
+              <li>Networking Basics</li>
+              <li>HTML, C & Databases</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== ACTIVITIES ============== -->
+    <section id="activities" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">07 — Beyond the Books</span>
+          <h2>Activities & service.</h2>
+        </div>
+
+        <div class="act-grid">
+          <div class="act-card reveal">
+            <div class="act-icon"><i class="ph-fill ph-hand-heart"></i></div>
+            <h3>Community Service</h3>
+            <p>Clean-up drives, charity donations, tree planting, blood donation, and assistance to local organizations.</p>
+          </div>
+          <div class="act-card reveal">
+            <div class="act-icon"><i class="ph-fill ph-users-three"></i></div>
+            <h3>Student Organizations</h3>
+            <p>Active participation in school events and activity organization, building leadership and teamwork skills.</p>
+          </div>
+          <div class="act-card reveal">
+            <div class="act-icon"><i class="ph-fill ph-globe-hemisphere-east"></i></div>
+            <h3>Global Aspirations</h3>
+            <p>Preparing to pursue an undergraduate engineering degree in India under the ICCR scholarship programme.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CONTACT ============== -->
+    <section id="contact" class="section section-dark">
+      <div class="container contact-inner">
+        <div class="contact-text reveal">
+          <span class="kicker kicker-light">08 — Contact</span>
+          <h2>Let's build something <span class="grad-text">meaningful</span> together.</h2>
+          <p>
+            I'm always happy to connect with fellow students, mentors, and collaborators. Whether it's research, an opportunity, or simply a conversation about physics — feel free to reach out.
+          </p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:aungkitasaha2005@gmail.com">
+              <i class="ph ph-envelope-simple"></i> aungkitasaha2005@gmail.com
+            </a>
+            <a class="btn btn-ghost-light" href="https://www.linkedin.com/in/aungkita" target="_blank" rel="noopener">
+              <i class="ph ph-linkedin-logo"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-card reveal">
+          <div class="card-row">
+            <i class="ph ph-envelope-simple-open"></i>
+            <div>
+              <span>Email</span>
+              <a href="mailto:aungkitasaha2005@gmail.com">aungkitasaha2005@gmail.com</a>
+            </div>
+          </div>
+          <div class="card-row">
+            <i class="ph ph-linkedin-logo"></i>
+            <div>
+              <span>LinkedIn</span>
+              <a href="https://www.linkedin.com/in/aungkita" target="_blank" rel="noopener">linkedin.com/in/aungkita</a>
+            </div>
+          </div>
+          <div class="card-row">
+            <i class="ph ph-globe"></i>
+            <div>
+              <span>Website</span>
+              <a href="https://aungkita.github.io">aungkita.github.io</a>
+            </div>
+          </div>
+          <div class="card-row">
+            <i class="ph ph-map-pin"></i>
+            <div>
+              <span>Location</span>
+              <span class="plain">Savar, Dhaka, Bangladesh</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="brand-mark small">A</span>
+        <span>© <span id="year"></span> Aungkita Saha · Designed with care.</span>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:aungkitasaha2005@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+        <a href="https://www.linkedin.com/in/aungkita" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="#top" aria-label="Back to top"><i class="ph ph-arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button id="toTop" class="to-top" aria-label="Back to top">
+    <i class="ph ph-arrow-up"></i>
+    <svg class="progress-ring" width="48" height="48">
+      <circle cx="24" cy="24" r="22" />
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>
