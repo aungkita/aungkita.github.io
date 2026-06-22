@@ -192,4 +192,136 @@
     } catch (e) {}
   }, 60 * 1000);
 
+  /* ---------- Particle network (dark mode background) ---------- */
+  const canvas = document.getElementById('particles-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animationId = null;
+    let mouseX = -1000, mouseY = -1000;
+
+    const PARTICLE_COLOR = 'rgba(212, 165, 116, ';   // warm gold (var(--accent) dark)
+    const LINE_COLOR = 'rgba(212, 165, 116, ';
+    const PARTICLE_RADIUS = 2;
+    const CONNECT_DISTANCE = 130;
+    const PARTICLE_COUNT_RATIO = 9000; // 1 particle per ~9000 px²
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    const createParticles = () => {
+      const count = Math.min(90, Math.floor((canvas.width * canvas.height) / PARTICLE_COUNT_RATIO));
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          r: PARTICLE_RADIUS + Math.random()
+        });
+      }
+    };
+
+    const drawParticles = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((p, i) => {
+        // Move
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Wrap around edges
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+
+        // Mouse repulsion (subtle)
+        const dxm = p.x - mouseX;
+        const dym = p.y - mouseY;
+        const distM = Math.sqrt(dxm * dxm + dym * dym);
+        if (distM < 120) {
+          const force = (120 - distM) / 120;
+          p.x += (dxm / distM) * force * 1.5;
+          p.y += (dym / distM) * force * 1.5;
+        }
+
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = PARTICLE_COLOR + '0.7)';
+        ctx.fill();
+
+        // Connect to nearby particles
+        for (let j = i + 1; j < particles.length; j++) {
+          const q = particles[j];
+          const dx = p.x - q.x;
+          const dy = p.y - q.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < CONNECT_DISTANCE) {
+            const opacity = (1 - dist / CONNECT_DISTANCE) * 0.35;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.strokeStyle = LINE_COLOR + opacity + ')';
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      });
+
+      animationId = requestAnimationFrame(drawParticles);
+    };
+
+    const startParticles = () => {
+      if (animationId) return;
+      resizeCanvas();
+      createParticles();
+      drawParticles();
+    };
+
+    const stopParticles = () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+        animationId = null;
+      }
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    };
+
+    // Observe theme changes on <html> to start/stop particles
+    const observer = new MutationObserver(() => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if (isDark) startParticles();
+      else stopParticles();
+    });
+    observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+
+    // Init based on current theme
+    if (root.getAttribute('data-theme') === 'dark') startParticles();
+
+    // Resize handler
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      if (!animationId) return;
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        resizeCanvas();
+        createParticles();
+      }, 200);
+    });
+
+    // Track mouse for subtle interaction
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    window.addEventListener('mouseleave', () => {
+      mouseX = -1000;
+      mouseY = -1000;
+    });
+  }
+
 })();

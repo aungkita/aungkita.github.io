@@ -20,12 +20,15 @@
 </head>
 <body>
 
-  <!-- Animated background blobs -->
+  <!-- Animated background blobs (light mode) -->
   <div class="bg-orbs" aria-hidden="true">
     <span class="orb orb-1"></span>
     <span class="orb orb-2"></span>
     <span class="orb orb-3"></span>
   </div>
+
+  <!-- Particle network (dark mode) -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
   <!-- ============== NAV ============== -->
   <header class="nav" id="nav">
@@ -501,7 +504,7 @@
     <div class="container footer-inner">
       <div class="footer-left">
         <span class="brand-mark small">A</span>
-        <span>© <span id="year"></span> Aungkita Saha · Designed with care.</span>
+        <span>© <span id="year"></span> Aungkita Saha · Designed with Love (<i class="ph-fill ph-heart" style="color: var(--accent);"></i>).</span>
       </div>
       <div class="footer-links">
         <a href="mailto:aungkitasaha2005@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
