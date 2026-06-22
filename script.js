@@ -77,7 +77,18 @@
 
   if (toTop) {
     toTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const startPos = window.scrollY;
+      const duration = 900;
+      const startTime = performance.now();
+      const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      const animateScroll = (now) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeInOutCubic(progress);
+        window.scrollTo(0, startPos * (1 - eased));
+        if (progress < 1) requestAnimationFrame(animateScroll);
+      };
+      requestAnimationFrame(animateScroll);
     });
   }
 
