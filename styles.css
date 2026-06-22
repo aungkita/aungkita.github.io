@@ -327,8 +327,10 @@ strong { font-weight: 600; color: var(--ink); }
   color: var(--accent); font-size: .82rem; font-weight: 500;
   margin-bottom: 22px;
 }
-.eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(107,79,63,.18); animation: pulse 2.4s ease-in-out infinite; }
-@keyframes pulse { 0%,100% { box-shadow: 0 0 0 4px rgba(107,79,63,.18); } 50% { box-shadow: 0 0 0 8px rgba(107,79,63,0); } }
+.eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  flex-shrink: 0;
+}
 .hero-text h1 { margin-bottom: 22px; }
 .hero-text h1 .serif-italic { display: block; font-size: .55em; margin-top: 14px; color: var(--ink-soft); font-weight: 500; }
 .hero-sub { font-size: 1.08rem; max-width: 560px; color: var(--ink-soft); margin-bottom: 32px; }
@@ -422,7 +424,13 @@ strong { font-weight: 600; color: var(--ink); }
   width: 22px; height: 36px; border: 1.5px solid var(--muted); border-radius: 12px;
   display: grid; place-items: start center; padding-top: 6px;
 }
-.wheel { width: 2.5px; height: 7px; background: var(--muted); border-radius: 2px; animation: wheel 1.8s ease-in-out infinite; }
+.wheel {
+  width: 2.5px; height: 7px; background: var(--muted); border-radius: 2px;
+  animation: wheel 1.8s ease-in-out infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
 @keyframes wheel { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(12px); opacity: 0; } }
 
 /* ---------- Section base ---------- */
@@ -499,7 +507,12 @@ strong { font-weight: 600; color: var(--ink); }
 .t-note { font-size: .95rem; }
 
 /* ---------- Interest grid ---------- */
-.interest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  gap: 22px;
+  justify-content: center;
+}
 .i-card {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 28px; box-shadow: var(--shadow-sm);
