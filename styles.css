@@ -292,9 +292,14 @@ strong { font-weight: 600; color: var(--ink); }
   .dhaka-tz { display: none; }
 }
 
-/* Hide toggle/clock on smaller viewports to keep nav clean */
+/* Hide clock on smaller viewports to keep nav clean (theme toggle stays) */
 @media (max-width: 960px) {
-  .theme-toggle, .dhaka-clock { display: none; }
+  .dhaka-clock { display: none; }
+  .theme-toggle { padding: 3px; }
+  .theme-btn { padding: 6px 8px; }
+}
+@media (max-width: 380px) {
+  .theme-btn { padding: 6px 7px; }
 }
 
 /* ---------- Buttons ---------- */
@@ -757,7 +762,7 @@ strong { font-weight: 600; color: var(--ink); }
   .hero-grid, .about-grid, .skill-cols, .contact-inner { grid-template-columns: 1fr; gap: 50px; }
   .hero { padding-top: 110px; min-height: auto; padding-bottom: 110px; }
   .hero-portrait { order: -1; }
-  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: 14px 4%; background: rgba(251,250,247,.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: 14px 4%; background: var(--nav-bg); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 14px 16px; border-radius: 12px; }
   .nav-cta { display: none; }
