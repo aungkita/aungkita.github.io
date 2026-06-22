@@ -528,6 +528,10 @@ strong { font-weight: 600; color: var(--ink); }
   display: block;
 }
 .t-logo-ju img { width: 88%; height: 88%; object-fit: contain; margin: auto; }
+[data-theme="dark"] .t-card-logo {
+  background: #ffffff;
+  border-color: #ffffff;
+}
 .t-card-info { flex: 1; min-width: 0; }
 .t-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
 .t-date { font-family: 'JetBrains Mono', monospace; font-size: .8rem; color: var(--accent); }
