@@ -127,7 +127,7 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 
 /* Smooth theme transitions */
 body, .section, .section-alt, .section-dark,
-.nav, .nav.scrolled, .bg-orbs, .hero-stats, .floating-chip,
+.nav, .nav.scrolled, .bg-orbs, .hero-stats, .floating-chip, .ju-badge,
 .c-card, .a-card, .i-card, .skill-col, .info-card, .t-card,
 .contact-card, .footer, .card-row, .chip-list li, .theme-toggle,
 .theme-btn, .dhaka-clock {
@@ -308,7 +308,7 @@ strong { font-weight: 600; color: var(--ink); }
   background: transparent; color: #fff;
   box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.25);
 }
-.btn-ghost-light:hover { background: #fff; color: var(--ink); transform: translateY(-2px); }
+.btn-ghost-light:hover { background: #fff; color: #1a1a1f; transform: translateY(-2px); }
 
 /* ---------- HERO ---------- */
 .hero {
@@ -353,16 +353,27 @@ strong { font-weight: 600; color: var(--ink); }
   position: relative;
   width: min(420px, 90%); aspect-ratio: 1/1;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, var(--grad-a), var(--grad-b), var(--grad-c), var(--grad-a));
   padding: 6px;
+}
+.portrait-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--grad-a), var(--grad-b), var(--grad-c), var(--grad-a));
   animation: spin 22s linear infinite;
+  z-index: 0;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 .portrait-img {
+  position: relative;
   width: 100%; height: 100%; border-radius: 50%; overflow: hidden;
   background: var(--bg-alt);
-  animation: spin 22s linear infinite reverse;
   box-shadow: 0 30px 60px rgba(20,20,30,.25);
+  z-index: 1;
 }
 .portrait-img img { width: 100%; height: 100%; object-fit: cover; }
 .floating-chip {
@@ -384,19 +395,20 @@ strong { font-weight: 600; color: var(--ink); }
 .hero-portrait { padding-bottom: 100px; }
 .portrait-ring { margin-bottom: 0; }
 .ju-badge {
+  position: absolute;
+  display: inline-flex; align-items: center;
   gap: 14px; font-size: 1rem; font-weight: 600;
-  padding: 10px 22px;
+  padding: 10px 22px; border-radius: 999px;
   top: calc(85% + 12px); left: 50%; bottom: auto;
   transform: translateX(-50%);
   background: var(--chip-bg); color: var(--ink);
-  animation: bob-ju 5s ease-in-out infinite;
-  animation-delay: -2.4s;
+  box-shadow: 0 10px 30px rgba(20,20,30,.12);
+  backdrop-filter: blur(8px);
 }
 .ju-badge img { width: 64px; height: 64px; display: block; }
 /* Dark mode: light chip so the blue logo + dark "JU" text stay readable */
 [data-theme="dark"] .ju-badge { background: rgba(248,246,240,.94); color: #1a1a1f; }
 [data-theme="dark"] .ju-badge img { filter: brightness(1) saturate(1.2); }
-@keyframes bob-ju { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -10px); } }
 @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
 /* Scroll hint */
